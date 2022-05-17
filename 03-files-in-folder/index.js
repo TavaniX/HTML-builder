@@ -7,9 +7,11 @@ readdir(folderPath, {withFileTypes: true}, (err, files)=>{
     console.log(err);
   } else {
     files.forEach(file => {
+
       if(file.isFile()) {
         let fileFullPath = path.join(folderPath, file.name);
         let fileProps = path.parse(fileFullPath);
+
         lstat(fileFullPath, (err, stats) => {
           if(err) {
             console.log(err);
@@ -17,7 +19,7 @@ readdir(folderPath, {withFileTypes: true}, (err, files)=>{
             console.log(fileProps.name + ' - ' + fileProps.ext.slice(1, 99) + ' - ' + stats.size + 'kb' );
           }
         });
-        
+
       }
     });
   }
