@@ -16,7 +16,7 @@ readdir(folderPath, {withFileTypes: true}, (err, files)=>{
           if(err) {
             console.log(err);
           } else {
-            console.log(fileProps.name + ' - ' + fileProps.ext.slice(1, 99) + ' - ' + stats.size + 'kb' );
+            console.log(fileProps.name + ' - ' + fileProps.ext.slice(1, 99) + ' - ' + stats.size + 'b' );
           }
         });
 
@@ -24,3 +24,5 @@ readdir(folderPath, {withFileTypes: true}, (err, files)=>{
     });
   }
 });
+
+
